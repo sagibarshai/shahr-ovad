@@ -4,7 +4,7 @@ import AppLink from "../app-link";
 
 const Navigation: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const currentPath = window.location.pathname;
+  const currentPath = window.location.hash.replace(/^#/, "");
 
   const navigation = [
     { href: "/home", text: "הכל" },
