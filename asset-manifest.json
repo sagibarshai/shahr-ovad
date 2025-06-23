@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/sahar-ovad/static/js/main.d09a9a4c.js",
+    "static/js/453.d9af210e.chunk.js": "/sahar-ovad/static/js/453.d9af210e.chunk.js",
+    "index.html": "/sahar-ovad/index.html",
+    "main.d09a9a4c.js.map": "/sahar-ovad/static/js/main.d09a9a4c.js.map",
+    "453.d9af210e.chunk.js.map": "/sahar-ovad/static/js/453.d9af210e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.d09a9a4c.js"
+  ]
+}
