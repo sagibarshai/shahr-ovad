@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/sahar-ovad/static/js/main.d09a9a4c.js",
-    "static/js/453.d9af210e.chunk.js": "/sahar-ovad/static/js/453.d9af210e.chunk.js",
-    "index.html": "/sahar-ovad/index.html",
-    "main.d09a9a4c.js.map": "/sahar-ovad/static/js/main.d09a9a4c.js.map",
-    "453.d9af210e.chunk.js.map": "/sahar-ovad/static/js/453.d9af210e.chunk.js.map"
+    "main.js": "/shahr-ovad/static/js/main.d3e024b0.js",
+    "static/js/453.d9af210e.chunk.js": "/shahr-ovad/static/js/453.d9af210e.chunk.js",
+    "index.html": "/shahr-ovad/index.html",
+    "main.d3e024b0.js.map": "/shahr-ovad/static/js/main.d3e024b0.js.map",
+    "453.d9af210e.chunk.js.map": "/shahr-ovad/static/js/453.d9af210e.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.d09a9a4c.js"
+    "static/js/main.d3e024b0.js"
   ]
 }
