@@ -9,7 +9,7 @@ export const router = createHashRouter([
     children: [
       { path: "/home", element: <Home /> },
       { path: "/nets", element: <div>nets page</div> },
-      { path: "/shower-enclosures", element: <div>Shower Enclosures page</div> },
+      { path: "/shower-enclosures", element: <div>מקלחונים</div> },
       { path: "/aluminum", element: <div>Aluminum page</div> },
       { path: "/glass", element: <div>Glass page</div> },
     ],
