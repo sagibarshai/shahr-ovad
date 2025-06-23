@@ -8,7 +8,7 @@ const Navigation: React.FC = () => {
 
   const navigation = [
     { href: "/home", text: "הכל" },
-    { href: "/nets", text: "זכוכיות" },
+    { href: "/nets", text: "רשתות" },
     { href: "/shower-enclosures", text: "מקלחונים" },
     { href: "/aluminum", text: "אלומיניום" },
     { href: "/glass", text: "זכוכית" },
