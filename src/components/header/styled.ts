@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { asset } from "../../utils/asset";
 
 export const StyledHeaderWrapper = styled.div`
   padding-bottom: ${({ theme }) => theme.spaces.l};
@@ -46,7 +47,7 @@ export const StyledHeaderSubtitle = styled.h3`
 `;
 
 export const StyledHeaderImg = styled.img`
-  background-image: url("./images/main.jpg");
+  background-image: url(${asset("/images/main.jpg")});
   filter: brightness(50%);
   background-size: cover;
   background-repeat: repeat;
