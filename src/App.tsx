@@ -5,6 +5,10 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import Navigation from "./components/navigation";
+import WhyChooseUs from "./components/why-choose-us";
+import WhatWeClean from "./components/gallery";
+import Carousel from "./components/carousel";
+import ContactUs from "./components/contact-us";
 
 const fadeIn = keyframes`
 0% {
@@ -39,6 +43,19 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const reviews = [
+  "סהר פשוט תותח! הוא הגיע להחליף את הרשתות בבית והיה אדיב ומקצועי בצורה יוצאת דופן. עכשיו אין יתושים, והבית נראה נהדר!",
+  "איזו חוויה מרגשת לקבל רשת שקופה חדשה לסלון! סהר התקין אותה בצורה מושלמת, וזה מוסיף אור ואווירה לבית.",
+  "סהר התקין לנו מעבר נגיש לכלב על דלת הרשת, ועכשיו הכלב שלנו יוצא ונכנס בקלות. שירות אמין ומהיר.",
+  "התריס החשמלי שלנו לא עבד חודשים, עד שסהר הגיע ותיקן אותו במהירות. שירות מקצועי ואמין!",
+  "החלפתי את הרצועות לתריסים אצל סהר. הוא עשה את העבודה בדיוק ובמקצועיות, ועכשיו הכל פועל חלק.",
+  "סהר הגיע להחליף גומיות למקלחון שלנו. העבודה הייתה מקצועית, מהירה, ואנחנו ממש מרוצים מהאטימות המושלמת!",
+  "סהר הוא בחור אדיב ומקצועי. החליף לנו רשתות נגד יתושים, ועכשיו אנחנו יכולים לפתוח חלונות בלי לדאוג.",
+  "הרשת השקופה שסהר התקין לנו פשוט מדהימה! מרגיש כאילו אין רשת בכלל, אבל היא עושה את העבודה.",
+  "תודה לסהר על התקנת המעבר לכלב. פתרון נהדר, התקנה איכותית, ושירות מכל הלב.",
+  "סהר הצליח לתקן תריס חשמלי שכבר חשבנו שנצטרך להחליף. חסך לנו כסף והרבה כאב ראש!",
+];
+
 const App = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -53,9 +70,13 @@ const App = () => {
       <GlobalStyle />
 
       <StyledAppWrapper dir="rtl">
-        <Navigation />
         <Header />
+        <Navigation />
         <Outlet />
+        <WhyChooseUs />
+        <WhatWeClean />
+        <Carousel title={"לקוחות מספרים"} elements={reviews} />
+        <ContactUs />
       </StyledAppWrapper>
     </ThemeProvider>
   );
