@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/shahr-ovad/static/css/main.2e6d0aed.css",
-    "main.js": "/shahr-ovad/static/js/main.6a2a943f.js",
+    "main.js": "/shahr-ovad/static/js/main.c55cb1a1.js",
     "static/js/453.d9af210e.chunk.js": "/shahr-ovad/static/js/453.d9af210e.chunk.js",
     "index.html": "/shahr-ovad/index.html",
     "main.2e6d0aed.css.map": "/shahr-ovad/static/css/main.2e6d0aed.css.map",
-    "main.6a2a943f.js.map": "/shahr-ovad/static/js/main.6a2a943f.js.map",
+    "main.c55cb1a1.js.map": "/shahr-ovad/static/js/main.c55cb1a1.js.map",
     "453.d9af210e.chunk.js.map": "/shahr-ovad/static/js/453.d9af210e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2e6d0aed.css",
-    "static/js/main.6a2a943f.js"
+    "static/js/main.c55cb1a1.js"
   ]
 }
