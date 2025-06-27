@@ -23,13 +23,21 @@ const GalleryWrapper = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ⬅️ גדול יותר */
   gap: 24px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr); /* במובייל - 3 בעמודה */
+    gap: 12px;
+  }
+
+  @media (min-width: 769px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* במסך גדול */
+  }
 `;
 
 const ImageBox = styled.div`
   width: 100%;
-  padding-top: 100%; /* 🔽 במקום 150%, נוריד ל־100% או אפילו פחות */
+  padding-top: 150%; /* ⬅️ גובה יחסי גדול יותר */
   position: relative;
   background-color: #e0e0e0;
   border-radius: 12px;
@@ -41,6 +49,7 @@ const ImageBox = styled.div`
     transform: scale(1.03);
   }
 `;
+
 const StyledImg = styled.img`
   position: absolute;
   inset: 0;

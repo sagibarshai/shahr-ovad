@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
-export const NavWrapper = styled.div`
-  /* position: relative; */
+export const NavWrapper = styled.div<{ isMobileMenuOpen?: boolean }>`
   padding: ${({ theme }) => theme.spaces.l};
   z-index: 100;
-`;
 
+  @media (max-width: 768px) {
+    padding: 0;
+    display: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "block" : "none")};
+  }
+`;
 // Desktop nav – רק בדסקטופ
 export const DesktopNav = styled.div`
   display: flex;
