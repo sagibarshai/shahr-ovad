@@ -6,7 +6,7 @@ export const NavWrapper = styled.div<{ isMobileMenuOpen?: boolean }>`
 
   @media (max-width: 768px) {
     padding: 0;
-    display: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "block" : "none")};
+    /* display: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "block" : "none")}; */
   }
 `;
 // Desktop nav – רק בדסקטופ

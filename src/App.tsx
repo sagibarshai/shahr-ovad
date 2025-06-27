@@ -25,6 +25,10 @@ const StyledAppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spaces.xl2};
+
+  @media (max-width: 768px) {
+    gap: ${({ theme }) => theme.spaces.xl};
+  }
 `;
 
 const GlobalStyle = createGlobalStyle`
