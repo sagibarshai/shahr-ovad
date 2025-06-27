@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { NavWrapper } from "./styled";
+import { NavWrapper, BurgerButton, MobileMenu, CloseButton, DesktopNav } from "./styled";
 import AppLink from "../app-link";
 
 const Navigation: React.FC = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const currentPath = window.location.hash.replace(/^#/, "");
 
   const navigation = [
@@ -14,26 +14,37 @@ const Navigation: React.FC = () => {
     { href: "/glass", text: "זכוכית" },
   ];
 
+  const navLinks = navigation.map(({ href, text }, index) => {
+    const isActive = currentPath === href;
+    return (
+      <AppLink
+        key={href}
+        href={href}
+        text={text}
+        isActive={isActive}
+        isHighlight={false}
+        showUnderline={isActive}
+        handleMouseEnter={() => {}}
+        handleMouseLeave={() => {}}
+      />
+    );
+  });
+
   return (
     <NavWrapper>
-      {navigation.map(({ href, text }, index) => {
-        const isHovered = hoveredIndex === index;
-        const isHighlight = hoveredIndex !== null && isHovered;
-        const isActive = currentPath === href;
+      {/* Desktop */}
+      <DesktopNav>{navLinks}</DesktopNav>
 
-        return (
-          <AppLink
-            key={href}
-            href={href}
-            text={text}
-            isActive={isActive}
-            isHighlight={isHighlight}
-            showUnderline={(hoveredIndex !== null && isHighlight) || (hoveredIndex === null && isActive)}
-            handleMouseEnter={() => setHoveredIndex(index)}
-            handleMouseLeave={() => setHoveredIndex(null)}
-          />
-        );
-      })}
+      {/* Mobile Burger Button */}
+      <BurgerButton onClick={() => setMenuOpen(true)}>☰</BurgerButton>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <MobileMenu>
+          <CloseButton onClick={() => setMenuOpen(false)}>×</CloseButton>
+          {navLinks}
+        </MobileMenu>
+      )}
     </NavWrapper>
   );
 };

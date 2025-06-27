@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import Navigation from "./components/navigation";
 import WhyChooseUs from "./components/why-choose-us";
-import WhatWeClean from "./components/gallery";
+import WhatWeClean from "./components/services";
 import Carousel from "./components/carousel";
 import ContactUs from "./components/contact-us";
 

@@ -38,6 +38,27 @@ export const StyledLink = styled(Link)`
     font-size: ${({ theme }) => theme.fonts.sizes.subtitleMobile};
   }
 `;
+const highlightIn = keyframes`
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+`;
+
+export const HighlightBackground = styled.span`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #b1d4e9;
+  z-index: -1;
+  border-radius: 4px;
+  transform-origin: center;
+  animation: ${highlightIn} 0.15s ease forwards;
+`;
 
 export const Underline = styled.span`
   position: absolute;

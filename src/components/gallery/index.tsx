@@ -1,73 +1,82 @@
-import { useWindowDimensions } from "../../hooks/use-window-inner-width";
-import { theme } from "../../theme";
-import { asset } from "../../utils/asset";
-import IconText from "../icons-text";
-import {
-  StyledGalleryLeft,
-  StyledGalleryRegular,
-  StyledGalleryRight,
-  StyledGalleryRightTop,
-  StyledGalleryWrapper,
-  StyledMobileGalleryWrapper,
-  StyledWhatWeCleanContentWrapper,
-  StyledWhatWeCleanTitle,
-  StyledWhatWeCleanWrapper,
-} from "./styled";
+import React, { useState } from "react";
+import styled from "styled-components";
+import Lightbox from "yet-another-react-lightbox";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-const WhatWeClean = () => {
-  const { width } = useWindowDimensions();
+interface ImageItem {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+}
 
-  if (width <= theme.breakPoints.smallNumber) {
-    return (
-      <StyledWhatWeCleanWrapper>
-        <StyledWhatWeCleanContentWrapper>
-          <StyledWhatWeCleanTitle>תמונות מהשטח</StyledWhatWeCleanTitle>
-          <StyledMobileGalleryWrapper>
-            <IconText
-              icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-1.jpeg")} />}
-              title="רשת שקופה בלתי נראת לעין - להיט!"
-            />
-            <IconText icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-4.jpeg")} />} title="החלפת מנועים של תריסים חשמליים" />
-            <IconText icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-5.jpeg")} />} title="החלפת גומיות למקלחונים" />
-            <IconText icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-9.jpeg")} />} title="החלפת צירים למקלחונים" />
-            <IconText icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-6.jpeg")} />} title="דלת רשת" />
-            <IconText icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-2.jpeg")} />} title="מעבר נגיש לבעלי חיים" />
-            <IconText icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-7.jpeg")} />} title="החלפת גומיות למקלחונים" />
-          </StyledMobileGalleryWrapper>
-        </StyledWhatWeCleanContentWrapper>
-      </StyledWhatWeCleanWrapper>
-    );
+interface Props {
+  images: ImageItem[];
+}
+
+const GalleryWrapper = styled.div`
+  background-color: #f5f5f5;
+  padding: 40px;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ⬅️ גדול יותר */
+  gap: 24px;
+`;
+
+const ImageBox = styled.div`
+  width: 100%;
+  padding-top: 100%; /* 🔽 במקום 150%, נוריד ל־100% או אפילו פחות */
+  position: relative;
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.03);
   }
+`;
+const StyledImg = styled.img`
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const Gallery: React.FC<Props> = ({ images }) => {
+  const [index, setIndex] = useState<number | null>(null);
+
+  const fallbackImage = "/images/fallback.png"; // ⬅️ Fallback image path
+  const validSlides = images.filter((img) => !!img.src);
+  const openSlideIndex = index !== null && images[index].src ? validSlides.findIndex((v) => v.src === images[index].src) : null;
 
   return (
-    <StyledWhatWeCleanWrapper>
-      <StyledWhatWeCleanContentWrapper>
-        <StyledWhatWeCleanTitle>תמונות מהשטח</StyledWhatWeCleanTitle>
-        <StyledGalleryWrapper>
-          <StyledGalleryRight>
-            <StyledGalleryRightTop>
-              <IconText
-                icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-1.jpeg")} />}
-                title="רשת שקופה בלתי נראת לעין - להיט!"
-              />
-              <IconText
-                icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-4.jpeg")} />}
-                title="החלפת מנועים של תריסים חשמליים"
-              />
-            </StyledGalleryRightTop>
-            <StyledGalleryRightTop>
-              <IconText icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-5.jpeg")} />} title="החלפת גומיות למקלחונים" />
-              <IconText icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-9.jpeg")} />} title="החלפת צירים למקלחונים" />
-            </StyledGalleryRightTop>
-          </StyledGalleryRight>
-          <StyledGalleryLeft>
-            <IconText icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-6.jpeg")} />} title="התקנת מקלחונים" />
-          </StyledGalleryLeft>
-          <IconText icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-2.jpeg")} />} title="מעבר נגיש לבעלי חיים" />
-          <IconText icon={<StyledGalleryRegular backgroundImagePath={asset("/images/gallery-7.jpeg")} />} title="החלפת גומיות למקלחונים" />
-        </StyledGalleryWrapper>
-      </StyledWhatWeCleanContentWrapper>
-    </StyledWhatWeCleanWrapper>
+    <GalleryWrapper>
+      <Grid>
+        {images.map((img, i) => (
+          <ImageBox key={i} onClick={() => setIndex(i)}>
+            <StyledImg src={img.src || fallbackImage} alt={img.alt} width={img.width} height={img.height} loading="lazy" />
+          </ImageBox>
+        ))}
+      </Grid>
+
+      {index !== null && images[index].src && (
+        <Lightbox
+          open
+          index={openSlideIndex ?? 0}
+          close={() => setIndex(null)}
+          slides={validSlides.map((img) => ({ src: img.src, description: img.alt }))}
+          plugins={[Thumbnails]}
+        />
+      )}
+    </GalleryWrapper>
   );
 };
-export default WhatWeClean;
+
+export default Gallery;

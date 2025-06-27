@@ -1,6 +1,10 @@
 import { createHashRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/home";
+import Nets from "../pages/nets";
+import Showers from "../pages/showers";
+import Aluminum from "../pages/aluminum";
+import Glasses from "../pages/glass";
 
 export const router = createHashRouter([
   {
@@ -8,10 +12,10 @@ export const router = createHashRouter([
     element: <App />, // App עוטף את כל הילדים
     children: [
       { path: "/home", element: <Home /> },
-      { path: "/nets", element: <div>nets page</div> },
-      { path: "/shower-enclosures", element: <div>מקלחונים</div> },
-      { path: "/aluminum", element: <div>Aluminum page</div> },
-      { path: "/glass", element: <div>Glass page</div> },
+      { path: "/nets", element: <Nets /> },
+      { path: "/shower-enclosures", element: <Showers /> },
+      { path: "/aluminum", element: <Aluminum /> },
+      { path: "/glass", element: <Glasses /> },
     ],
   },
 ]);
