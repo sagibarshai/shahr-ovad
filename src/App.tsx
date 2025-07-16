@@ -65,7 +65,7 @@ const App = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (location.pathname === "/") {
-      navigate("/glass");
+      navigate("/shower-enclosures");
     }
   }, [location]);
 
