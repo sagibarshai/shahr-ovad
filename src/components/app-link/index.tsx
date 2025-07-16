@@ -11,7 +11,6 @@ const AppLink: React.FC<AppLinkProps> = ({ href, text, showUnderline, handleMous
           textAlign: "center",
         }}
       >
-        {" "}
         {showUnderline && <HighlightBackground aria-hidden />}
         {text}
       </span>

@@ -8,10 +8,10 @@ const Navigation: React.FC = () => {
 
   const navigation = [
     { href: "/home", text: "הכל" },
-    { href: "/nets", text: "רשתות" },
+    { href: "/glass", text: "זכוכית" },
     { href: "/shower-enclosures", text: "מקלחונים" },
     { href: "/aluminum", text: "אלומיניום" },
-    { href: "/glass", text: "זכוכית" },
+    { href: "/nets", text: "רשתות" },
   ];
 
   const navLinks = navigation.map(({ href, text }, index) => {
