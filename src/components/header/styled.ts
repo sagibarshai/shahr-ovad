@@ -48,7 +48,7 @@ export const StyledHeaderSubtitle = styled.h3`
 
 export const StyledHeaderImg = styled.img`
   background-image: url(${asset("/images/main.jpg")});
-  filter: brightness(50%);
+  filter: brightness(30%);
   background-size: cover;
   background-repeat: repeat;
   width: 100%;
@@ -58,4 +58,5 @@ export const StyledHeaderImg = styled.img`
 `;
 export const StyledHeaderLogo = styled.img`
   margin-top: ${({ theme }) => theme.spaces.xl};
+  background-image: url(${asset("/images/logo-2.png")});
 `;
