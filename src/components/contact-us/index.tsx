@@ -1,4 +1,4 @@
-import { IconCar, IconPhone, IconWhatsapp } from "../../icons";
+import { IconCar, IconPhone, IconWhatsapp, IconFacebook, IconInstagram } from "../../icons";
 import IconText from "../icons-text";
 import {
   StyleContactUsTitle,
@@ -21,7 +21,14 @@ const ContactUs = () => {
         <StyledContactUsFixedA target="_blank" href="tel:+972543188238">
           <IconPhone size={28} />
         </StyledContactUsFixedA>
+        <StyledContactUsFixedA target="_blank" href="">
+          <IconFacebook color="#1877F2" size={28} />
+        </StyledContactUsFixedA>
+        <StyledContactUsFixedA target="_blank" href="">
+          <IconInstagram color="#E1306C" size={28} />
+        </StyledContactUsFixedA>
       </StyledContactUsFixed>
+
       <StyledContactUsWrapper>
         <StyledContactUsContentWrapper>
           <StyleContactUsTitle>דברו איתנו!</StyleContactUsTitle>
@@ -33,6 +40,14 @@ const ContactUs = () => {
             <StyledContactUsPersonalPhone target="_blank" href="tel:+972543188238">
               <IconPhone size={28} />
               <StyledContactUsText>התקשרו אלינו - 054-3188238 </StyledContactUsText>
+            </StyledContactUsPersonalPhone>
+            <StyledContactUsPersonalPhone target="_blank" href="">
+              <IconFacebook color="#1877F2" size={28} />
+              <StyledContactUsText>עקבו אחרינו בפייסבוק</StyledContactUsText>
+            </StyledContactUsPersonalPhone>
+            <StyledContactUsPersonalPhone target="_blank" href="">
+              <IconInstagram color="#E1306C" size={28} />
+              <StyledContactUsText>עקבו אחרינו באינסטגרם</StyledContactUsText>
             </StyledContactUsPersonalPhone>
           </StyledContactUsRow>
         </StyledContactUsContentWrapper>
