@@ -11,7 +11,6 @@ export const router = createHashRouter([
     path: "/",
     element: <App />, // App עוטף את כל הילדים
     children: [
-      { path: "/home", element: <Home /> },
       { path: "/nets", element: <Nets /> },
       { path: "/shower-enclosures", element: <Showers /> },
       { path: "/aluminum", element: <Aluminum /> },

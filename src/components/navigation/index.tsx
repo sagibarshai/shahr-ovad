@@ -7,7 +7,6 @@ const Navigation: React.FC = () => {
   const currentPath = window.location.hash.replace(/^#/, "");
 
   const navigation = [
-    { href: "/home", text: "הכל" },
     { href: "/glass", text: "זכוכית" },
     { href: "/shower-enclosures", text: "מקלחונים" },
     { href: "/aluminum", text: "אלומיניום" },
