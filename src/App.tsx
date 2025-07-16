@@ -77,8 +77,7 @@ const App = () => {
         <Header />
         <Navigation />
         <Outlet />
-        <WhyChooseUs />
-        <WhatWeClean />
+
         <Carousel title={"לקוחות מספרים"} elements={reviews} />
         <ContactUs />
       </StyledAppWrapper>
