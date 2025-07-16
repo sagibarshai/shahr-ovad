@@ -1,9 +1,7 @@
-import { useState } from "react";
-import { NavWrapper, BurgerButton, MobileMenu, CloseButton, DesktopNav } from "./styled";
+import { NavWrapper, DesktopNav } from "./styled";
 import AppLink from "../app-link";
 
 const Navigation: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const currentPath = window.location.hash.replace(/^#/, "");
 
   const navigation = [
@@ -12,7 +10,7 @@ const Navigation: React.FC = () => {
     { href: "/aluminum", text: "רשתות ואלומיניום" },
   ];
 
-  const navLinks = navigation.map(({ href, text }, index) => {
+  const navLinks = navigation.map(({ href, text }) => {
     const isActive = currentPath === href;
     return (
       <AppLink
@@ -30,19 +28,7 @@ const Navigation: React.FC = () => {
 
   return (
     <NavWrapper>
-      {/* Desktop */}
       <DesktopNav>{navLinks}</DesktopNav>
-
-      {/* Mobile Burger Button */}
-      <BurgerButton onClick={() => setMenuOpen(true)}>☰</BurgerButton>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <MobileMenu>
-          <CloseButton onClick={() => setMenuOpen(false)}>×</CloseButton>
-          {navLinks}
-        </MobileMenu>
-      )}
     </NavWrapper>
   );
 };

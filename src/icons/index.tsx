@@ -15,3 +15,4 @@ export { MdSavings as IconSaveMoney } from "react-icons/md";
 export { FaHandsBubbles as IconClean } from "react-icons/fa6";
 export { FaTools as IconTools } from "react-icons/fa";
 export { FaMosquito as IconMosquito } from "react-icons/fa6";
+export { FaFacebook as IconFacebook } from "react-icons/fa";

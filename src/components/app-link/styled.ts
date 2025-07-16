@@ -35,7 +35,7 @@ export const StyledLink = styled(Link)`
   font-size: ${({ theme }) => theme.fonts.sizes.subtitle};
   font-weight: 800;
   @media screen and (${({ theme }) => theme.breakPoints.small}) {
-    font-size: ${({ theme }) => theme.fonts.sizes.subtitleMobile};
+    font-size: 14px;
   }
 `;
 const highlightIn = keyframes`

@@ -14,9 +14,12 @@ export const DesktopNav = styled.div`
   display: flex;
   gap: 40px;
   direction: rtl;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 768px) {
-    display: none;
+    gap: 10px;
   }
 `;
 

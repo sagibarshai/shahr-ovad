@@ -25,7 +25,7 @@ const StyledAppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spaces.xl2};
-
+  overflow-x: hidden;
   @media (max-width: 768px) {
     gap: ${({ theme }) => theme.spaces.xl};
   }
