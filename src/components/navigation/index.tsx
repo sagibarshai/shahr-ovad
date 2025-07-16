@@ -9,7 +9,7 @@ const Navigation: React.FC = () => {
   const navigation = [
     { href: "/glass", text: "מעקות מזכוכית" },
     { href: "/shower-enclosures", text: "מקלחונים" },
-    { href: "/aluminum", text: "ורשתות אלומיניום" },
+    { href: "/aluminum", text: "רשתות ואלומיניום" },
   ];
 
   const navLinks = navigation.map(({ href, text }, index) => {
