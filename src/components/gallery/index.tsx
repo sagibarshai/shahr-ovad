@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Lightbox from "yet-another-react-lightbox";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
@@ -81,7 +82,18 @@ const Gallery: React.FC<Props> = ({ images }) => {
           index={openSlideIndex ?? 0}
           close={() => setIndex(null)}
           slides={validSlides.map((img) => ({ src: img.src, description: img.alt }))}
-          plugins={[Thumbnails]}
+          plugins={[Thumbnails, Zoom]}
+          zoom={{
+            maxZoomPixelRatio: 5,
+            zoomInMultiplier: 2,
+            doubleTapDelay: 300,
+            doubleClickDelay: 300,
+            doubleClickMaxStops: 2,
+            keyboardMoveDistance: 50,
+            wheelZoomDistanceFactor: 100,
+            pinchZoomDistanceFactor: 100,
+            scrollToZoom: true,
+          }}
         />
       )}
     </GalleryWrapper>

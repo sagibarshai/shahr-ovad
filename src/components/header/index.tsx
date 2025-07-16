@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <StyledHeaderWrapper>
       <StyledHeaderContentWrapper>
-        <StyledHeaderLogo src={asset("/images/logo.svg")} />
+        <StyledHeaderLogo src={asset("/images/logo-1.svg")} />
         <StyledHeaderTitle> עבודות זכוכית ואלומיניום </StyledHeaderTitle>
         <StyledHeaderSubtitle>
           ברוכים הבאים ל-GLASSTECH, אצלנו תמצאו את כל הפתרונות בעבודות זכוכית, אלומיניום ורשתות
